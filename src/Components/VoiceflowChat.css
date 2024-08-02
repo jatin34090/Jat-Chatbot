@@ -1,0 +1,39 @@
+
+.proactive-buttons  {
+    display: flex;
+    flex-direction: column;
+   position: absolute;
+   bottom: 10px;
+   right: 125px;
+   margin-bottom: 14px;
+   padding-bottom: 30px;
+  }
+  .proactive-buttons .proactive-button {
+    margin-top: 7px;
+    padding: 6px 20px;
+    background-color: #6CB4EE;
+    border-radius: 50px 20px;
+    border: 1px solid black;
+    font-size: 16px;
+  
+    cursor: pointer;
+  }
+  .proactive-toggle{
+    position: absolute;
+    top: -40px;
+    right: 0px;
+    background-color: white;
+    padding: 6px 20px;
+    border-radius: 50px 20px;
+    border: 1px solid gray;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .proactive-title{
+    margin-top: 7px;
+    padding: 6px 20px;
+    cursor: pointer;
+    border-radius: 50px 20px;
+    border: 1px solid gray;
+    font-size: 16px;
+  }
