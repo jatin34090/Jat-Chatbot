@@ -1,91 +1,52 @@
 # How to run the project
-Step 1- git clone
+
+Run the give commants in the terminal-
+Step 1- git clone (https://github.com/jatin34090/Jat-Chatbot)
+Step 2- npm install
+Step 3- npm run start
+
+# What I learned about Voiceflow’s Chat UI Kit.
+
+VoiceFlow-> Voiceflow is a no-code platform that allows users to design, prototype, and build conversational AI experiences, such as chatbots and voice applications, for platforms like Amazon Alexa, Google Assistant, and web-based chat interfaces.
+
+# How can I Integrate VoiceFlow Chatbot into my application
+
+Step 1- Select Embed Widget or visit the Integrations tab on the left side of the screen to access the snippet.
+Step 2- Copy the snippet and add it to the website's code.
+Step 3- Add it to the footer file or the website.
+
+# window.voiceflow
+
+window.voiceflow provide only one object called chat
+
+# window.voiceflow.chat
+
+window.voiceflow.chat have a object which contain 8 functions which wecan use to manipulate the chatbot. All the function are give below -
+# 1 - close
+    Purpose: Closes or hides the chat widget.
+    Usage: Used to hide the chat widget from view.
+# 2 - open
+    Purpose: Opens or displays the chat widget.
+    Usage: Typically used to make the chat widget visible to the user.
+# 3 - destroy
+    Purpose: Destroys or removes the chat widget from the DOM.
+    Usage: Completely removes the chat widget and cleans up resources.
+# 4 - hide
+    Purpose: Hides the chat widget but keeps it in the DOM.
+    Usage: Makes the chat widget invisible while still preserving its state and DOM elements.
+# 5 - show
+    Purpose: Shows the chat widget if it’s been hidden.
+    Usage: Makes the chat widget visible again if it was hidden previously.
+# 6 - interact
+    Purpose: Handles interactions with the chat widget. This might involve sending messages or other interactive features.
+    Usage: Used to perform actions or send messages to the chat.
+# 7 - load
+    Purpose: Loads or initializes the chat widget.
+    Usage: Typically used to ensure the chat widget is properly initialized and ready for use.
+# 8 - proactive
+    Purpose: Manages proactive messages and actions.
+    Usage:
+        clear: Clears any proactive messages or prompts.
+        push: Pushes a new proactive message or prompt to the chat.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

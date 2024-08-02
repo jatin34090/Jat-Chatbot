@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to Our Chatbot!</h1>
+        <h1>Clickable Proactive Buttons Demo</h1>
         <VoiceflowChat />
       </header>
     </div>

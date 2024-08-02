@@ -28,7 +28,8 @@ const VoiceflowChat = () => {
 
   const handleSendMessage = async (message) => {
     await handleOpenChat();
-    console.log(window.voiceflow);
+    console.log(typeof window.voiceflow.chat);
+    console.log( window.voiceflow);
     if (window.voiceflow && window.voiceflow.chat) {
       try {
         const response = await window.voiceflow.chat.interact({
