@@ -1,39 +1,58 @@
+.proactive-buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+  margin-bottom: 14px;
+  padding-bottom: 30px;
+}
+.proactive-button {
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
 
-.proactive-buttons  {
-    display: flex;
-    flex-direction: column;
-   position: absolute;
-   bottom: 10px;
-   right: 125px;
-   margin-bottom: 14px;
-   padding-bottom: 30px;
-  }
-  .proactive-buttons .proactive-button {
-    margin-top: 7px;
-    padding: 6px 20px;
-    background-color: #6CB4EE;
-    border-radius: 50px 20px;
-    border: 1px solid black;
-    font-size: 16px;
-  
-    cursor: pointer;
-  }
-  .proactive-toggle{
-    position: absolute;
-    top: -40px;
-    right: 0px;
-    background-color: white;
-    padding: 6px 20px;
-    border-radius: 50px 20px;
-    border: 1px solid gray;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .proactive-title{
-    margin-top: 7px;
-    padding: 6px 20px;
-    cursor: pointer;
-    border-radius: 50px 20px;
-    border: 1px solid gray;
-    font-size: 16px;
-  }
+.proactive-button {
+  opacity: 1;
+}
+
+
+.proactive-buttons .proactive-button {
+  margin-top: 7px;
+  padding: 6px 20px;
+  background-color: #6CB4EE;
+  border-radius: 50px 20px;
+  border: 1px solid black;
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.proactive-buttons .proactive-button:hover {
+  background-color: #5daee0;
+}
+
+.proactive-buttons .proactive-button:active {
+  background-color: #5daee0;
+}
+
+.proactive-toggle {
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  background-color: white;
+  padding: 6px 20px;
+  border-radius: 50px 20px;
+  border: 1px solid gray;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.proactive-title {
+  margin-top: 7px;
+  padding: 6px 20px;
+  cursor: pointer;
+  border-radius: 50px 20px;
+  border: 1px solid gray;
+  font-size: 16px;
+}

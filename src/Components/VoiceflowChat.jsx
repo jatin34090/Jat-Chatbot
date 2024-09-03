@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "./VoiceflowChat.css"; 
+import "./VoiceflowChat.css";
 
 const VoiceflowChat = () => {
   const [buttonShow, setButtonShow] = useState(false);
+  const [button1Visible, setButton1Visible] = useState(false);
+  const [button2Visible, setButton2Visible] = useState(false);
+  const [button3Visible, setButton3Visible] = useState(false);
+  const [button4Visible, setButton4Visible] = useState(false);
+
   useEffect(() => {
     const scriptId = "voiceflow-chat-script";
     if (!document.getElementById(scriptId)) {
@@ -11,13 +16,16 @@ const VoiceflowChat = () => {
       script.type = "text/javascript";
       script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
       script.onload = () => {
-        window.voiceflow.chat.load({
+        window.voiceflow.chat
+          .load({
             verify: { projectID: "66a924f06b56308fbf96bb29" },
             url: "https://general-runtime.voiceflow.com",
             versionID: "production",
-          }).then(() => {
+          })
+          .then(() => {
             setButtonShow(true);
-          }).catch((err) => {
+          })
+          .catch((err) => {
             console.error("Error loading Voiceflow chat:", err);
           });
       };
@@ -25,12 +33,21 @@ const VoiceflowChat = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (buttonShow) {
+      // Start showing buttons one by one with a delay
+      setTimeout(() => setButton1Visible(true), 1000);
+      // setTimeout(() => setButton2Visible(true), 2000);
+      // setTimeout(() => setButton3Visible(true), 3000);
+      // setTimeout(() => setButton4Visible(true), 4000);
+    }
+  }, [buttonShow]);
 
   const handleSendMessage = async (message) => {
     await handleOpenChat();
     if (window.voiceflow && window.voiceflow.chat) {
       try {
-        const response = await window.voiceflow.chat.interact({
+        await window.voiceflow.chat.interact({
           type: "text",
           payload: message,
         });
@@ -50,20 +67,64 @@ const VoiceflowChat = () => {
 
   return (
     <div className="voiceflow-chat-container">
-      {buttonShow && <div className="proactive-buttons">
-        <span className="proactive-toggle" onClick={() => setButtonShow(!buttonShow)}>x</span>
-        <div className="proactive-title" onClick={() => handleOpenChat()}>How can I help you?</div>
-        <button className="proactive-button"
-          onClick={() => handleSendMessage("I have a question for support")}
-        >
-          I have a question for support
-        </button>
-        <button className="proactive-button"
-          onClick={() => handleSendMessage("I have a question for sales")}
-        >
-          I have a question for sales
-        </button>
-      </div>}
+      {buttonShow && (
+        <div className="proactive-buttons">
+          <span
+            className="proactive-toggle"
+            onClick={() => setButtonShow(false)}
+          >
+            x
+          </span>
+          <div className="proactive-title" onClick={handleOpenChat}>
+            How can I help you?
+          </div>
+          {button1Visible && (
+            <div className="flex flex-col">
+              <div>
+                <button
+                  className="proactive-button"
+                  onClick={() =>
+                    handleSendMessage("I have a question for support")
+                  }
+                >
+                  I have a question for support
+                </button>
+              </div>
+              <div>
+                <button
+                  className="proactive-button"
+                  onClick={() =>
+                    handleSendMessage("I have a question for sales")
+                  }
+                >
+                  I have a question for sales
+                </button>
+              </div>
+              <div>
+                <button
+                  className="proactive-button"
+                  onClick={() =>
+                    handleSendMessage("I have a question for sales")
+                  }
+                >
+                  I have a question for sales
+                </button>
+              </div>
+
+              <div>
+                <button
+                  className="proactive-button"
+                  onClick={() =>
+                    handleSendMessage("I have a question for sales")
+                  }
+                >
+                  I have a question for sales
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };
