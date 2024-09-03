@@ -287,12 +287,12 @@ const VoiceflowChat = () => {
     <div className="voiceflow-chat-container">
       {buttonShow && (
         <div className="proactive-buttons">
-          {/* <span className="proactive-toggle" onClick={() => setButtonShow(false)}>
+          <span className="proactive-toggle" onClick={() => setButtonShow(false)}>
             x
           </span>
           <div className="proactive-title" onClick={handleOpenChat}>
             How can I help you?
-          </div> */}
+          </div>
           <div className="flex flex-col">
             {dynamicButtons.map((button, index) => (
               <div key={index}>
