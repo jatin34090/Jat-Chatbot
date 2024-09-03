@@ -8,6 +8,23 @@ const VoiceflowChat = () => {
   const [button3Visible, setButton3Visible] = useState(false);
   const [button4Visible, setButton4Visible] = useState(false);
 
+
+  useEffect(() => {
+    window.addEventListener('message', (event) => {
+      // Check the origin for security
+      if (event.origin !== 'https://your-local-system-url') {
+        return;
+      }
+    
+      // Get the data
+      const data = event.data;
+    
+      // Use the data
+      console.log("data.projectID",data.projectID);  // Use projectID
+      console.log("data.messages",data.messages);   // Use messages
+    });
+  }, []);
+
   useEffect(() => {
     const scriptId = "voiceflow-chat-script";
     if (!document.getElementById(scriptId)) {
