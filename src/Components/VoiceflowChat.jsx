@@ -194,7 +194,8 @@ import "./VoiceflowChat.css";
 const VoiceflowChat = () => {
   const [buttonShow, setButtonShow] = useState(false);
   const [dynamicButtons, setDynamicButtons] = useState([]);
-  const [projectID, setProjectID] = useState("66a924f06b56308fbf96bb29"); // Default project ID or use dynamic one
+  const [projectID, setProjectID] = useState(""); // Default project ID or use dynamic one
+  // const [projectID, setProjectID] = useState("66a924f06b56308fbf96bb29"); // Default project ID or use dynamic one
 
   useEffect(() => {
     // Fetch URL parameters
