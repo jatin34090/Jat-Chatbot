@@ -12,7 +12,7 @@ const VoiceflowChat = () => {
   useEffect(() => {
     window.addEventListener('message', (event) => {
       // Check the origin for security
-      if (event.origin !== 'http://localhost:5500/') {
+      if (event.origin !== 'http://localhost:5500') {
         return;
       }
     
@@ -20,9 +20,10 @@ const VoiceflowChat = () => {
       const data = event.data;
     
       // Use the data
-      console.log("data.projectID",data.projectID);  // Use projectID
-      console.log("data.messages",data.messages);   // Use messages
+      console.log(data.projectID);  // Use projectID
+      console.log(data.messages);   // Use messages
     });
+    
   }, []);
 
   useEffect(() => {
