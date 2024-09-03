@@ -12,7 +12,7 @@ const VoiceflowChat = () => {
   useEffect(() => {
     window.addEventListener('message', (event) => {
       // Check the origin for security
-      if (event.origin !== 'https://your-local-system-url') {
+      if (event.origin !== 'http://localhost:5500/' && event.origin !== 'https://capable-dolphin-ccf912.netlify.app') {
         return;
       }
     
@@ -23,6 +23,15 @@ const VoiceflowChat = () => {
       console.log("data.projectID",data.projectID);  // Use projectID
       console.log("data.messages",data.messages);   // Use messages
     });
+  }, []);
+
+  useEffect(() => {
+    const data = {
+      response: 'yourResponseData',
+    };
+    
+    // Send the data to the parent window
+    window.parent.postMessage(data, 'http://localhost:5500/');
   }, []);
 
   useEffect(() => {
