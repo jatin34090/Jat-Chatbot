@@ -12,7 +12,7 @@ const VoiceflowChat = () => {
   useEffect(() => {
     window.addEventListener('message', (event) => {
       // Check the origin for security
-      if (event.origin !== 'http://localhost:5500/' && event.origin !== 'https://capable-dolphin-ccf912.netlify.app') {
+      if (event.origin !== 'http://localhost:5500/') {
         return;
       }
     
