@@ -204,6 +204,7 @@ const VoiceflowChat = () => {
     const urlButtons = urlParams.get("buttons");
 
     // Set dynamic project ID if available
+    console.log("Project ID from URL:", urlProjectID);
     if (urlProjectID) {
       setProjectID(urlProjectID);
     }
@@ -212,6 +213,7 @@ const VoiceflowChat = () => {
     if (urlButtons) {
       try {
         const buttons = JSON.parse(decodeURIComponent(urlButtons));
+        console.log("Buttons from URL:", buttons);
         setDynamicButtons(buttons);
       } catch (error) {
         console.error("Error parsing buttons from URL:", error);
