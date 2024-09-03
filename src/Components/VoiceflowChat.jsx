@@ -240,7 +240,7 @@ const VoiceflowChat = () => {
       };
       document.body.appendChild(script);
     }
-  }, []);
+  }, [projectID]);
 
   // Dynamically create buttons after the chat is loaded
   useEffect(() => {
