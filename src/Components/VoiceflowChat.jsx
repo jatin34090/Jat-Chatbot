@@ -37,9 +37,9 @@ const VoiceflowChat = () => {
     if (buttonShow) {
       // Start showing buttons one by one with a delay
       setTimeout(() => setButton1Visible(true), 1000);
-      // setTimeout(() => setButton2Visible(true), 2000);
-      // setTimeout(() => setButton3Visible(true), 3000);
-      // setTimeout(() => setButton4Visible(true), 4000);
+      setTimeout(() => setButton2Visible(true), 2000);
+      setTimeout(() => setButton3Visible(true), 3000);
+      setTimeout(() => setButton4Visible(true), 4000);
     }
   }, [buttonShow]);
 
@@ -78,8 +78,8 @@ const VoiceflowChat = () => {
           <div className="proactive-title" onClick={handleOpenChat}>
             How can I help you?
           </div>
-          {button1Visible && (
-            <div className="flex flex-col">
+          <div className="flex flex-col">
+            {button1Visible && (
               <div>
                 <button
                   className="proactive-button"
@@ -90,27 +90,9 @@ const VoiceflowChat = () => {
                   I have a question for support
                 </button>
               </div>
-              <div>
-                <button
-                  className="proactive-button"
-                  onClick={() =>
-                    handleSendMessage("I have a question for sales")
-                  }
-                >
-                  I have a question for sales
-                </button>
-              </div>
-              <div>
-                <button
-                  className="proactive-button"
-                  onClick={() =>
-                    handleSendMessage("I have a question for sales")
-                  }
-                >
-                  I have a question for sales
-                </button>
-              </div>
+            )}
 
+            {button2Visible && (
               <div>
                 <button
                   className="proactive-button"
@@ -121,8 +103,34 @@ const VoiceflowChat = () => {
                   I have a question for sales
                 </button>
               </div>
-            </div>
-          )}
+            )}
+
+            {button3Visible && (
+              <div>
+                <button
+                  className="proactive-button"
+                  onClick={() =>
+                    handleSendMessage("I have a question for sales")
+                  }
+                >
+                  I have a question for sales
+                </button>
+              </div>
+            )}
+
+            {button4Visible && (
+              <div>
+                <button
+                  className="proactive-button"
+                  onClick={() =>
+                    handleSendMessage("I have a question for sales")
+                  }
+                >
+                  I have a question for sales
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
