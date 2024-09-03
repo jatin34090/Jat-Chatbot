@@ -8,31 +8,39 @@ const VoiceflowChat = () => {
   const [button3Visible, setButton3Visible] = useState(false);
   const [button4Visible, setButton4Visible] = useState(false);
 
-
   useEffect(() => {
-    window.addEventListener('message', (event) => {
-      // Check the origin for security
-      if (event.origin !== 'http://localhost:5500') {
-        return;
-      }
-    
-      // Get the data
+    // window.addEventListener('message', (event) => {
+    //   // Check the origin for security
+    //   if (event.origin !== 'http://localhost:5500') {
+    //     return;
+    //   }
+
+    //   // Get the data
+    //   const data = event.data;
+
+    //   // Use the data
+    //   console.log(data.projectID);  // Use projectID
+    //   console.log(data.messages);   // Use messages
+    // });
+
+    window.addEventListener("message", (event) => {
+      // For development purposes
+      console.log("Received message:", event.data);
+
+      // Get the data without strict origin check
       const data = event.data;
-    
-      // Use the data
-      console.log(data.projectID);  // Use projectID
-      console.log(data.messages);   // Use messages
+      console.log("Received data:", data);
     });
-    
+
   }, []);
 
   useEffect(() => {
     const data = {
-      response: 'yourResponseData',
+      response: "yourResponseData",
     };
-    
+
     // Send the data to the parent window
-    window.parent.postMessage(data, 'http://localhost:5500/');
+    window.parent.postMessage(data, "/");
   }, []);
 
   useEffect(() => {
