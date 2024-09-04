@@ -7,38 +7,6 @@ const VoiceflowChat = () => {
   const [button2Visible, setButton2Visible] = useState(false);
 
 
-  useEffect(() => {
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const projectID = urlParams.get('projectID');
-  const buttons = JSON.parse(decodeURIComponent(urlParams.get('buttons')));
-
-  // Use projectID and buttons as needed
-  if (projectID) {
-    window.voiceflow.chat.load({
-      verify: { projectID: projectID },
-      url: "https://general-runtime.voiceflow.com",
-      versionID: "production",
-    }).then(() => {
-      if (buttons) {
-        buttons.forEach((button, index) => {
-          setTimeout(() => {
-            const buttonElement = document.createElement('button');
-            buttonElement.textContent = button.label;
-            buttonElement.onclick = () => {
-              window.voiceflow.chat.interact({
-                type: 'text',
-                payload: button.message,
-              });
-            };
-            document.body.appendChild(buttonElement);
-          }, index * 1000);
-        });
-      }
-    }).catch(err => console.error("Error loading Voiceflow chat:", err));
-  }
-
-  }, []);
 
   useEffect(() => {
     const scriptId = "voiceflow-chat-script";
